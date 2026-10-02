@@ -8,22 +8,31 @@
     <meta name="description"
         content="Gioielleria Annicchiarico a Trieste. Gioielli, perle, pietre preziose, creazioni artigianali e servizi di laboratorio.">
     <meta property="og:image" content="assets/images/hero.jpg">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
     <link rel="stylesheet" href="css/style.css">
     <script src="config/config.js" defer></script>
     <script src="js/site.js" defer></script>
+
 </head>
 
 <body>
-    <header><a class="logo" href="#home"><i>A</i><span>Annicchiarico<small>Gioielli · Trieste</small></span></a><button
-            class="menu">Menu</button>
-        <nav><a href="#storia">Storia</a><a href="#collezioni">Gioielli</a><a href="#atelier">Atelier</a><a
-                href="#servizi">Servizi</a><a href="#contatti">Contatti</a></nav>
+    <header>
+    <a class="logo" href="#home">
+        <span class="logo-text">
+            <strong>Annicchiarico</strong>
+            <small>Gioielli</small>
+            <small>Trieste</small>
+        </span>
+    </a>
+
+        <button class="menu">Menu</button>
+    <nav><a href="#storia">Storia</a><a href="#collezioni">Gioielli</a><a href="#collezioni2">Creazioni
+            Contemporanee</a><a href="#servizi">Servizi</a><a href="#contatti">Contatti</a></nav>
     </header>
     <main id="home">
         <section class="hero"><img src="assets/images/hero.jpg" alt="Perle e gioielli ispirati a Trieste">
             <div class="shade"></div>
             <div class="hero-copy reveal">
-                <p>Gioielleria storica · Trieste</p>
                 <h1>La bellezza<br><em>attraversa il tempo.</em></h1>
                 <p>Tradizione artigiana, gemme e design contemporaneo nel cuore della città.</p><a class="btn"
                     href="#collezioni">Scopri il nostro mondo</a><a class="line" href="#contatti">Vieni a trovarci</a>
@@ -50,29 +59,127 @@
             </div>
         </section>
         <section id="collezioni" class="collections pad">
+
             <div class="center reveal">
                 <p class="eyebrow">Le proposte</p>
-                <h2>Materia, luce, armonia.</h2>
+                <h2>Fascino intramontabile per gioielli senza tempo</h2>
             </div>
-            <div class="collection-grid">
-                <article class="big reveal"><img src="assets/images/pearls.jpg" alt="Gioielli con perle">
-                    <div><small>Perle</small>
-                        <h3>Eleganza naturale</h3>
-                        <p>Collane, orecchini e dettagli luminosi dal fascino senza tempo.</p>
+
+            <div class="jewelry-carousel reveal">
+
+                <div class="jewelry-stage">
+
+                    <div class="jewelry-slide">
+                        <img src="assets/images/1.png" alt="Gioielli con perle">
                     </div>
-                </article>
-                <article class="reveal"><img src="assets/images/collection.jpg" alt="Gioielli in oro e argento">
-                    <div><small>Oro e argento</small>
-                        <h3>Forme contemporanee</h3>
+
+                    <div class="jewelry-slide">
+                        <img src="assets/images/2.png" alt="Gioielli in oro e argento">
                     </div>
-                </article>
-                <article class="reveal"><img src="assets/images/gemstones.jpg" alt="Pietre preziose e dure">
-                    <div><small>Gemme</small>
-                        <h3>Il linguaggio del colore</h3>
+
+                    <div class="jewelry-slide">
+                        <img src="assets/images/3.png" alt="Pietre preziose e dure">
                     </div>
-                </article>
+
+                    <div class="jewelry-slide">
+                        <img src="assets/images/4.png" alt="Dettaglio gioiello con perle">
+                    </div>
+
+                    <div class="jewelry-slide">
+                        <img src="assets/images/5.png" alt="Dettaglio gioiello in oro">
+                    </div>
+
+                    <div class="jewelry-slide">
+                        <img src="assets/images/6.png" alt="Dettaglio pietra preziosa">
+                    </div>
+
+                </div>
+
+                <button class="jewelry-arrow jewelry-prev" aria-label="Gioiello precedente">
+                    &#8592;
+                </button>
+
+                <button class="jewelry-arrow jewelry-next" aria-label="Gioiello successivo">
+                    &#8594;
+                </button>
+
+                <div class="jewelry-counter">
+                    <span class="jewelry-current">01</span>
+                    <span>/</span>
+                    <span class="jewelry-total">06</span>
+                </div>
+
+            </div>
+
+        </section>
+        <section id="collezioni2" class="collections pad">
+            <div class="center reveal">
+                <h2>Collezioni Contemporanee in argento e oro</h2>
+            </div>
+
+            <div class="collection-gallery">
+
+                <button class="gallery-item reveal" type="button" data-full="assets/images/borsari2.png"
+                    aria-label="Apri immagine a schermo intero">
+                    <img src="assets/images/borsari2.png" alt="Gioielli con perle" loading="lazy">
+                </button>
+
+                <button class="gallery-item reveal" type="button" data-full="assets/images/borsari1.png"
+                    aria-label="Apri immagine a schermo intero">
+                    <img src="assets/images/borsari1.png" alt="Gioielli in oro e argento" loading="lazy">
+                </button>
+
+                <button class="gallery-item reveal" type="button" data-full="assets/images/borsari3.png"
+                    aria-label="Apri immagine a schermo intero">
+                    <img src="assets/images/borsari3.png" alt="Pietre preziose e dure" loading="lazy">
+                </button>
+
+                <button class="gallery-item reveal" type="button" data-full="assets/images/borsari4.png"
+                    aria-label="Apri immagine a schermo intero">
+                    <img src="assets/images/borsari4.png" alt="Collezione di gioielli" loading="lazy">
+                </button>
+
+                <button class="gallery-item reveal" type="button" data-full="assets/images/tsa1.png"
+                    aria-label="Apri immagine a schermo intero">
+                    <img src="assets/images/tsa1.png" alt="Gioielli contemporanei" loading="lazy">
+                </button>
+
+                <button class="gallery-item reveal" type="button" data-full="assets/images/tsa2.png"
+                    aria-label="Apri immagine a schermo intero">
+                    <img src="assets/images/tsa2.png" alt="Gioielli in oro" loading="lazy">
+                </button>
+
+                <button class="gallery-item reveal" type="button" data-full="assets/images/tsa3.png"
+                    aria-label="Apri immagine a schermo intero">
+                    <img src="assets/images/tsa3.png" alt="Gioielli in argento" loading="lazy">
+                </button>
+
+                <button class="gallery-item reveal" type="button" data-full="assets/images/tsa4.png"
+                    aria-label="Apri immagine a schermo intero">
+                    <img src="assets/images/tsa4.png" alt="Collezione preziosa" loading="lazy">
+                </button>
+
             </div>
         </section>
+
+
+        <!-- LIGHTBOX -->
+        <div class="lightbox" id="lightbox" aria-hidden="true">
+            <button class="lightbox-close" type="button" aria-label="Chiudi">
+                &times;
+            </button>
+
+            <button class="lightbox-prev" type="button" aria-label="Immagine precedente">
+                &#10094;
+            </button>
+
+            <img class="lightbox-image" src="" alt="">
+
+            <button class="lightbox-next" type="button" aria-label="Immagine successiva">
+                &#10095;
+            </button>
+        </div>
+
         <section id="atelier" class="atelier"><img src="assets/images/atelier.jpg"
                 alt="Creazione artigianale di gioielli">
             <div class="reveal">
@@ -106,35 +213,67 @@
                 </article>
             </div>
         </section>
-        <section class="consultation"><img src="assets/images/consultation.jpg"
-                alt="Consulenza nella scelta di perle e gioielli">
-            <div class="reveal">
-                <p class="eyebrow">La consulenza</p>
-                <h2>Ogni gioiello<br>inizia dall’ascolto.</h2>
-            </div>
-        </section>
-        <section class="trieste"><img src="assets/images/trieste.jpg"
-                alt="Gioielli e perle in un'ambientazione ispirata a Trieste">
-            <div class="reveal">
-                <p class="eyebrow">Annicchiarico · Trieste</p>
-                <h2>Una tradizione<br>nel cuore della città.</h2>
-            </div>
-        </section>
         <section id="contatti" class="contact pad">
-            <div class="reveal">
+            <div class="contact-content reveal">
                 <p class="eyebrow">Contatti</p>
+
                 <h2>Vieni a trovarci.</h2>
-                <p class="address" data-key="address"></p><a class="phone" data-key="phone" data-link="phone"></a>
-                <div id="hours"></div>
-                <div class="actions"><a class="btn" data-link="maps" target="_blank">Indicazioni</a><a class="line dark"
-                        data-link="phone">Chiama la gioielleria</a></div><small>Gli orari pubblicati online non sono
-                    uniformi. Verificali telefonicamente prima della visita.</small>
-            </div><img src="assets/images/boutique.jpg" alt="Interno illustrativo della gioielleria">
+
+                <p class="contact-intro">
+                    Saremo felici di accoglierti in gioielleria e aiutarti a trovare
+                    il gioiello perfetto per ogni occasione.
+                </p>
+
+                <div class="contact-details">
+
+                    <div class="contact-item">
+                        <span class="contact-label">Dove siamo</span><p>Dietro la nuova guida luminosa</p> 
+                        <a class="address" target="_blank" data-key="address" data-link="maps"
+                            aria-label="Vai alla gioielleria">
+                        </a> 
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">Telefono</span>
+                        <a class="phone" data-key="phone" data-link="phoneHref" aria-label="Chiama la gioielleria">
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-label">Orari</span>
+                        <div id="hours"></div>
+                    </div>
+
+                </div>
+
+                <div class="actions">
+                    <a class="btn" data-link="maps" target="_blank" rel="noopener noreferrer"
+                        aria-label="Apri la gioielleria su Google Maps">
+                        Indicazioni
+                    </a>
+
+                    <a class="line dark" data-link="phone" aria-label="Chiama la gioielleria">
+                        Chiama la gioielleria
+                    </a>
+                </div>
+
+                <div class="contact-social">
+                    <span>Seguici sui social</span>
+
+                    <a class="facebook-link" data-link="facebook" target="_blank" rel="noopener noreferrer"
+                        aria-label="Visita la nostra pagina Facebook">
+                        Facebook
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-image reveal">
+                <img src="assets/images/ingresso.png" alt="Ingresso della gioielleria">
+            </div>
         </section>
     </main>
     <footer>
         <div class="logo"><i>A</i><span>Annicchiarico<small>Gioielli · Trieste</small></span></div>
-        <p>Concept dimostrativo indipendente</p>
         <p>© <span id="year"></span></p>
     </footer>
 </body>
