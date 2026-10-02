@@ -1196,3 +1196,866 @@ footer {
         right: 2px;
     }
 }
+
+/* =========================================================
+   RESPONSIVE PATCH — MOBILE / TABLET
+   Mantiene il layout desktop e corregge i principali problemi
+   di overflow, proporzioni, spaziature e touch.
+   ========================================================= */
+
+/* Base: evita overflow orizzontale accidentale */
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Le immagini full-bleed devono ancorarsi davvero ai 4 lati */
+.hero > img,
+.boutique > img,
+.consultation > img,
+.trieste > img {
+    inset: 0;
+}
+
+/* Touch target più comodi senza alterare il look desktop */
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 850px) {
+    header {
+        height: 68px;
+        top: 12px;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    header.stick {
+        top: 0;
+    }
+
+    .logo {
+        gap: 9px;
+        font-size: 1rem;
+        min-width: 0;
+    }
+
+    .logo i {
+        width: 38px;
+        height: 38px;
+        flex: 0 0 38px;
+        font-size: 1.15rem;
+    }
+
+    .logo-text {
+        min-width: 0;
+    }
+
+    .logo-text small:first-of-type {
+        font-size: 1rem;
+    }
+
+    .logo-text small:last-of-type {
+        font-size: .82rem;
+        letter-spacing: 1.5px;
+    }
+
+    .menu {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 8px;
+        display: grid;
+        place-items: center;
+        font-size: .65rem;
+        letter-spacing: .12em;
+    }
+
+    nav {
+        right: 5vw;
+        top: 62px;
+        width: min(260px, calc(100vw - 10vw));
+        padding: 18px 20px;
+        gap: 16px;
+        border: 1px solid rgba(255,255,255,.08);
+        box-shadow: 0 15px 40px rgba(0,0,0,.25);
+    }
+
+    nav a {
+        font-size: .72rem;
+        padding: 5px 0;
+    }
+
+    .hero {
+        min-height: 620px;
+    }
+
+    .hero-copy {
+        margin-left: 7vw;
+        margin-right: 7vw;
+        max-width: 700px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3.4rem, 9vw, 5.8rem);
+        line-height: .9;
+    }
+
+    .hero-copy > p:last-of-type {
+        max-width: 560px;
+        font-size: clamp(1rem, 2vw, 1.15rem);
+    }
+
+    .vertical {
+        right: 1.5vw;
+        bottom: 5vh;
+    }
+
+    .pad {
+        padding: clamp(70px, 9vw, 100px) 7vw;
+    }
+
+    .story h2,
+    .boutique h2,
+    .center h2,
+    .atelier h2,
+    .consultation h2,
+    .trieste h2,
+    .contact h2 {
+        font-size: clamp(2.8rem, 7vw, 5rem);
+    }
+
+    .story > div:last-child {
+        font-size: 1.05rem;
+    }
+
+    .boutique,
+    .consultation,
+    .trieste {
+        height: 70vh;
+        min-height: 500px;
+    }
+
+    .boutique > div,
+    .consultation > div,
+    .trieste > div {
+        margin-left: 7vw;
+        margin-right: 7vw;
+        max-width: 650px;
+    }
+
+    .collection-grid article {
+        height: 420px;
+    }
+
+    .collection-grid .big {
+        height: 700px;
+    }
+
+    .collection-grid h3 {
+        font-size: 2.2rem;
+    }
+
+    .atelier > img {
+        height: 500px;
+    }
+
+    .atelier > div {
+        padding: 65px 7vw;
+    }
+
+    .service-grid article {
+        padding: 28px 22px;
+    }
+
+    .contact {
+        gap: 50px;
+    }
+
+    .contact-image {
+        min-height: 400px;
+    }
+}
+
+
+/* =========================
+   SMARTPHONE
+   ========================= */
+
+@media (max-width: 600px) {
+    body {
+        line-height: 1.6;
+    }
+
+    .demo {
+        padding: 5px 8px;
+        font-size: 8px;
+        letter-spacing: .11em;
+    }
+
+    header {
+        height: 60px;
+        top: 8px;
+        padding-left: 5vw;
+        padding-right: 4vw;
+    }
+
+    .logo {
+        gap: 7px;
+        max-width: calc(100vw - 70px);
+    }
+
+    .logo i {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+        font-size: 1rem;
+    }
+
+    .logo-text small:first-of-type {
+        font-size: .86rem;
+    }
+
+    .logo-text small:last-of-type {
+        font-size: .7rem;
+        letter-spacing: 1px;
+        margin-top: 2px;
+    }
+
+    nav {
+        top: 58px;
+        right: 4vw;
+        width: min(250px, 92vw);
+        padding: 16px 18px;
+    }
+
+    .hero {
+        height: 100svh;
+        min-height: 560px;
+    }
+
+    .shade {
+        background: linear-gradient(
+            180deg,
+            #0b131aa8 0%,
+            #0b131a70 42%,
+            #0b131adf 100%
+        );
+    }
+
+    .hero-copy {
+        width: auto;
+        margin: 0 8vw;
+        padding-top: 35px;
+    }
+
+    .hero-copy > p,
+    .eyebrow {
+        font-size: .58rem;
+        letter-spacing: .18em;
+    }
+
+    .hero h1 {
+        margin: .25em 0 .35em;
+        font-size: clamp(3rem, 15vw, 4.4rem);
+        line-height: .88;
+        overflow-wrap: normal;
+    }
+
+    .hero-copy > p:last-of-type {
+        margin-top: 20px;
+        font-size: 1rem;
+        line-height: 1.55;
+    }
+
+    .btn {
+        padding: 13px 17px;
+        margin-right: 0;
+        font-size: .62rem;
+    }
+
+    .vertical {
+        display: none;
+    }
+
+    .pad {
+        padding: 65px 7vw;
+    }
+
+    .story h2,
+    .boutique h2,
+    .center h2,
+    .atelier h2,
+    .consultation h2,
+    .trieste h2,
+    .contact h2 {
+        font-size: clamp(2.55rem, 13vw, 4rem);
+        line-height: .92;
+    }
+
+    .story > div:last-child {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .boutique,
+    .consultation,
+    .trieste {
+        height: auto;
+        min-height: 560px;
+    }
+
+    .boutique > div,
+    .consultation > div,
+    .trieste > div {
+        margin: 0 8vw;
+        padding: 70px 0;
+    }
+
+    .collection-grid {
+        display: flex;
+        width: calc(100% + 14vw);
+        margin-left: -7vw;
+        gap: 10px;
+        padding: 0 7vw 12px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+    }
+
+    .collection-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .collection-grid article,
+    .collection-grid .big {
+        flex: 0 0 82vw;
+        width: 82vw;
+        min-width: 82vw;
+        height: 480px;
+        scroll-snap-align: center;
+        grid-column: auto;
+    }
+
+    .collection-grid div {
+        left: 24px;
+        right: 22px;
+        bottom: 22px;
+    }
+
+    .collection-grid h3 {
+        font-size: 2rem;
+    }
+
+    .atelier {
+        grid-template-columns: 1fr;
+    }
+
+    .atelier > img {
+        height: min(95vw, 440px);
+    }
+
+    .atelier > div {
+        padding: 55px 7vw;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr !important;
+        margin-top: 35px;
+    }
+
+    .service-grid article {
+        padding: 25px 0;
+        border-right: 0;
+        border-bottom: 1px solid #3e4d5855;
+    }
+
+    .service-grid article:last-child {
+        border-bottom: 0;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .contact-content {
+        max-width: none;
+    }
+
+    .contact-intro {
+        margin: 16px 0 30px;
+        font-size: 1rem;
+    }
+
+    .contact-details {
+        gap: 18px;
+        margin-bottom: 30px;
+    }
+
+    .contact-item {
+        padding-bottom: 16px;
+    }
+
+    .phone {
+        font-size: 1.55rem;
+    }
+
+    .actions {
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 14px;
+        margin: 28px 0;
+    }
+
+    .actions .btn,
+    .actions a {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .contact-social {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 28px;
+        padding-top: 20px;
+    }
+
+    .contact-image {
+        min-height: 0;
+        height: min(90vw, 380px);
+    }
+
+    .contact-image img {
+        height: 100%;
+    }
+
+    footer {
+        padding: 28px 7vw;
+        gap: 14px;
+        line-height: 1.5;
+    }
+
+    /* Jewelry carousel: niente immagini laterali fuori schermo */
+    .jewelry-carousel {
+        margin-top: 30px;
+        padding: 15px 0 55px;
+    }
+
+    .jewelry-stage {
+        height: min(112vw, 430px);
+        min-height: 350px;
+    }
+
+    .jewelry-slide {
+        width: min(68vw, 270px);
+        height: min(88vw, 350px);
+    }
+
+    .jewelry-slide.position-left {
+        transform:
+            translate(calc(-50% - 42vw), -50%)
+            scale(.52);
+        opacity: .28;
+    }
+
+    .jewelry-slide.position-right {
+        transform:
+            translate(calc(-50% + 42vw), -50%)
+            scale(.52);
+        opacity: .28;
+    }
+
+    .jewelry-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .jewelry-prev {
+        left: 5px;
+    }
+
+    .jewelry-next {
+        right: 5px;
+    }
+
+    .jewelry-counter {
+        bottom: 10px;
+        font-size: .62rem;
+    }
+
+    /* Gallery */
+    .collection-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+        margin-top: 25px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+        padding: 10px;
+    }
+
+    .lightbox-image {
+        max-width: calc(100vw - 20px);
+        max-height: 78svh;
+    }
+
+    .lightbox-close {
+        top: max(8px, env(safe-area-inset-top));
+        right: 10px;
+        font-size: 34px;
+        padding: 8px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 40px;
+        height: 50px;
+        font-size: 26px;
+    }
+
+    .lightbox-prev {
+        left: 0;
+    }
+
+    .lightbox-next {
+        right: 0;
+    }
+}
+
+
+/* =========================
+   TELEFONI MOLTO PICCOLI
+   ========================= */
+
+@media (max-width: 380px) {
+    .hero {
+        min-height: 530px;
+    }
+
+    .hero h1 {
+        font-size: 2.9rem;
+    }
+
+    .hero-copy > p:last-of-type {
+        font-size: .92rem;
+    }
+
+    .collection-grid article,
+    .collection-grid .big {
+        flex-basis: 86vw;
+        width: 86vw;
+        min-width: 86vw;
+        height: 450px;
+    }
+
+    .jewelry-stage {
+        min-height: 330px;
+    }
+
+    .jewelry-slide {
+        width: 64vw;
+        height: 82vw;
+    }
+
+    .jewelry-slide.position-left {
+        transform:
+            translate(calc(-50% - 39vw), -50%)
+            scale(.48);
+    }
+
+    .jewelry-slide.position-right {
+        transform:
+            translate(calc(-50% + 39vw), -50%)
+            scale(.48);
+    }
+}
+
+
+/* Accessibilità: chi preferisce meno movimento */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* =========================================================
+   MOBILE NAVBAR — PREMIUM / TOUCH FRIENDLY
+   Richiede il markup esistente:
+   .menu + nav + nav.open
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    header {
+        height: 68px;
+        padding: 0 5vw;
+    }
+
+    /* Pulsante hamburger */
+    .menu {
+        position: relative;
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        min-height: 46px;
+        padding: 0;
+        border: 1px solid rgba(255,255,255,.28);
+        border-radius: 50%;
+        background: rgba(11,19,26,.38);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #fff;
+        font-size: 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+            background .3s ease,
+            border-color .3s ease,
+            transform .3s ease;
+    }
+
+    /* Tre linee */
+    .menu::before,
+    .menu::after,
+    .menu span {
+        content: "";
+        position: absolute;
+        width: 17px;
+        height: 1px;
+        background: currentColor;
+        left: 50%;
+        transition:
+            transform .3s ease,
+            opacity .2s ease,
+            top .3s ease;
+    }
+
+    .menu::before {
+        top: 17px;
+        transform: translateX(-50%);
+    }
+
+    .menu span {
+        top: 22px;
+        transform: translateX(-50%);
+    }
+
+    .menu::after {
+        top: 27px;
+        transform: translateX(-50%);
+    }
+
+    .menu:hover {
+        background: rgba(11,19,26,.7);
+        border-color: rgba(255,255,255,.55);
+    }
+
+    .menu:active {
+        transform: scale(.94);
+    }
+
+    /* Quando il menu è aperto.
+       Funziona anche se il JS aggiunge aria-expanded. */
+    .menu[aria-expanded="true"]::before {
+        top: 22px;
+        transform: translateX(-50%) rotate(45deg);
+    }
+
+    .menu[aria-expanded="true"] span {
+        opacity: 0;
+    }
+
+    .menu[aria-expanded="true"]::after {
+        top: 22px;
+        transform: translateX(-50%) rotate(-45deg);
+    }
+
+    /* Pannello */
+    nav {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 5vw;
+        right: 5vw;
+        width: auto;
+        max-height: calc(100svh - 90px);
+        overflow-y: auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        padding: 8px;
+        margin: 0;
+
+        background: rgba(11,19,26,.96);
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 16px;
+
+        box-shadow:
+            0 20px 60px rgba(0,0,0,.32),
+            0 5px 20px rgba(0,0,0,.18);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px) scale(.98);
+        transform-origin: top center;
+
+        transition:
+            opacity .25s ease,
+            visibility .25s ease,
+            transform .25s ease;
+    }
+
+    nav.open {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0) scale(1);
+    }
+
+    nav a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 52px;
+        width: 100%;
+        padding: 0 15px;
+
+        color: rgba(255,255,255,.88);
+        font-size: .72rem;
+        letter-spacing: .15em;
+        text-decoration: none;
+
+        border-radius: 10px;
+
+        transition:
+            background .25s ease,
+            color .25s ease,
+            padding-left .25s ease;
+    }
+
+    nav a + a {
+        border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+        color: #fff;
+        background: rgba(255,255,255,.07);
+        padding-left: 19px;
+        outline: none;
+    }
+
+    nav a:active {
+        background: rgba(255,255,255,.12);
+    }
+
+    /* Header quando è già in stato sticky */
+    header.stick .menu {
+        background: rgba(255,255,255,.05);
+    }
+}
+
+
+/* Smartphone: pannello quasi full-width */
+@media (max-width: 600px) {
+
+    header {
+        height: 60px;
+        top: 8px;
+        padding: 0 5vw;
+    }
+
+    .menu {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        min-height: 43px;
+    }
+
+    nav {
+        top: calc(100% + 8px);
+        left: 4vw;
+        right: 4vw;
+        max-height: calc(100svh - 82px);
+        padding: 7px;
+        border-radius: 14px;
+    }
+
+    nav a {
+        min-height: 50px;
+        padding: 0 14px;
+        font-size: .68rem;
+        letter-spacing: .13em;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+        padding-left: 18px;
+    }
+}
+
+
+/* Telefoni molto piccoli */
+@media (max-width: 380px) {
+    .menu {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    nav {
+        left: 3vw;
+        right: 3vw;
+    }
+
+    nav a {
+        min-height: 48px;
+        font-size: .65rem;
+    }
+}
+
+
+/* Riduzione movimento */
+@media (prefers-reduced-motion: reduce) {
+    .menu,
+    .menu::before,
+    .menu::after,
+    .menu span,
+    nav,
+    nav a {
+        transition: none !important;
+    }
+}
