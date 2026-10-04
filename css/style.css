@@ -96,7 +96,9 @@ header.stick {
 }
 
 .logo-text strong {
-    font-weight: inherit;
+    font-family: "EngrvrsOldEng", serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 .logo-text small {
@@ -664,16 +666,6 @@ footer {
     font-family: "EngrvrsOldEng";
     src: url("../assets/fonts/engrvrsoldeng-bd-bt-bold.ttf") ;
 
-}
-
-.logo {
-    font-family: "EngrvrsOldEng", serif;
-    font-weight: 700;
-}
-
-.logo i {
-    font-family: "EngrvrsOldEng", serif;
-    font-style: normal;
 }
 
 /* .logo span {
@@ -1801,26 +1793,70 @@ a {
 }
 
 /* =========================================================
-   MOBILE NAVBAR — PREMIUM / TOUCH FRIENDLY
-   Richiede il markup esistente:
-   .menu + nav + nav.open
+   NAVBAR RESPONSIVE — CLEAN VERSION
    ========================================================= */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.menu {
+    display: none;
+}
 
 @media (max-width: 850px) {
 
     header {
         height: 68px;
+        top: 12px;
         padding: 0 5vw;
     }
 
-    /* Pulsante hamburger */
+    header.stick {
+        top: 0;
+    }
+
+    .logo {
+        min-width: 0;
+        max-width: calc(100% - 58px);
+    }
+
+    .logo-text {
+        min-width: 0;
+    }
+
+    .logo-text strong {
+        white-space: nowrap;
+    }
+
+    .logo-text small:first-of-type {
+        font-size: 1rem;
+    }
+
+    .logo-text small:last-of-type {
+        font-size: .82rem;
+        letter-spacing: 1.5px;
+    }
+
+    /* Hamburger */
     .menu {
         position: relative;
-        width: 46px;
-        height: 46px;
-        min-width: 46px;
-        min-height: 46px;
+        display: flex;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
         padding: 0;
+        margin: 0;
         border: 1px solid rgba(255,255,255,.28);
         border-radius: 50%;
         background: rgba(11,19,26,.38);
@@ -1829,43 +1865,36 @@ a {
         color: #fff;
         font-size: 0;
         cursor: pointer;
-        display: flex;
         align-items: center;
         justify-content: center;
-        transition:
-            background .3s ease,
-            border-color .3s ease,
-            transform .3s ease;
+        z-index: 1001;
+        transition: background .25s ease, border-color .25s ease, transform .25s ease;
     }
 
-    /* Tre linee */
     .menu::before,
     .menu::after,
     .menu span {
         content: "";
         position: absolute;
+        left: 50%;
         width: 17px;
         height: 1px;
         background: currentColor;
-        left: 50%;
-        transition:
-            transform .3s ease,
-            opacity .2s ease,
-            top .3s ease;
+        transition: transform .25s ease, opacity .2s ease, top .25s ease;
     }
 
     .menu::before {
-        top: 17px;
+        top: 14px;
         transform: translateX(-50%);
     }
 
     .menu span {
-        top: 22px;
+        top: 21px;
         transform: translateX(-50%);
     }
 
     .menu::after {
-        top: 27px;
+        top: 28px;
         transform: translateX(-50%);
     }
 
@@ -1878,10 +1907,8 @@ a {
         transform: scale(.94);
     }
 
-    /* Quando il menu è aperto.
-       Funziona anche se il JS aggiunge aria-expanded. */
     .menu[aria-expanded="true"]::before {
-        top: 22px;
+        top: 21px;
         transform: translateX(-50%) rotate(45deg);
     }
 
@@ -1890,18 +1917,18 @@ a {
     }
 
     .menu[aria-expanded="true"]::after {
-        top: 22px;
+        top: 21px;
         transform: translateX(-50%) rotate(-45deg);
     }
 
-    /* Pannello */
+    /* Mobile navigation */
     nav {
         position: absolute;
         top: calc(100% + 10px);
         left: 5vw;
         right: 5vw;
         width: auto;
-        max-height: calc(100svh - 90px);
+        max-height: calc(100svh - 95px);
         overflow-y: auto;
 
         display: flex;
@@ -1911,9 +1938,9 @@ a {
         padding: 8px;
         margin: 0;
 
-        background: rgba(11,19,26,.96);
+        background: rgba(11,19,26,.97);
         border: 1px solid rgba(255,255,255,.12);
-        border-radius: 16px;
+        border-radius: 14px;
 
         box-shadow:
             0 20px 60px rgba(0,0,0,.32),
@@ -1925,7 +1952,7 @@ a {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transform: translateY(-8px) scale(.98);
+        transform: translateY(-8px);
         transform-origin: top center;
 
         transition:
@@ -1935,32 +1962,24 @@ a {
     }
 
     nav.open {
-        display: flex;
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
 
     nav a {
-        position: relative;
         display: flex;
         align-items: center;
-        min-height: 52px;
         width: 100%;
+        min-height: 52px;
         padding: 0 15px;
-
-        color: rgba(255,255,255,.88);
+        color: rgba(255,255,255,.9);
         font-size: .72rem;
         letter-spacing: .15em;
         text-decoration: none;
-
-        border-radius: 10px;
-
-        transition:
-            background .25s ease,
-            color .25s ease,
-            padding-left .25s ease;
+        border-radius: 9px;
+        transition: background .2s ease, color .2s ease, padding-left .2s ease;
     }
 
     nav a + a {
@@ -1974,32 +1993,37 @@ a {
         padding-left: 19px;
         outline: none;
     }
-
-    nav a:active {
-        background: rgba(255,255,255,.12);
-    }
-
-    /* Header quando è già in stato sticky */
-    header.stick .menu {
-        background: rgba(255,255,255,.05);
-    }
 }
 
-
-/* Smartphone: pannello quasi full-width */
 @media (max-width: 600px) {
 
     header {
         height: 60px;
         top: 8px;
-        padding: 0 5vw;
+        padding: 0 4vw 0 5vw;
+    }
+
+    .logo {
+        gap: 7px;
+        max-width: calc(100% - 55px);
+    }
+
+    .logo-text small:first-of-type {
+        font-size: .86rem;
+    }
+
+    .logo-text small:last-of-type {
+        font-size: .7rem;
+        letter-spacing: 1px;
+        margin-top: 2px;
     }
 
     .menu {
-        width: 43px;
-        height: 43px;
-        min-width: 43px;
-        min-height: 43px;
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        min-height: 42px;
     }
 
     nav {
@@ -2008,7 +2032,7 @@ a {
         right: 4vw;
         max-height: calc(100svh - 82px);
         padding: 7px;
-        border-radius: 14px;
+        border-radius: 13px;
     }
 
     nav a {
@@ -2017,17 +2041,16 @@ a {
         font-size: .68rem;
         letter-spacing: .13em;
     }
-
-    nav a:hover,
-    nav a:focus-visible {
-        padding-left: 18px;
-    }
 }
 
-
-/* Telefoni molto piccoli */
 @media (max-width: 380px) {
+
+    .logo {
+        max-width: calc(100% - 50px);
+    }
+
     .menu {
+        flex-basis: 40px;
         width: 40px;
         height: 40px;
         min-width: 40px;
@@ -2045,8 +2068,6 @@ a {
     }
 }
 
-
-/* Riduzione movimento */
 @media (prefers-reduced-motion: reduce) {
     .menu,
     .menu::before,
@@ -2055,53 +2076,5 @@ a {
     nav,
     nav a {
         transition: none !important;
-    }
-}
-
-@media (max-width: 850px) {
-    .menu {
-        display: flex;
-        position: relative;
-        width: 32px;
-        height: 24px;
-        padding: 0;
-        margin: 0;
-        border: 0;
-        background: transparent;
-        border-radius: 0;
-        cursor: pointer;
-        align-items: center;
-        justify-content: center;
-        z-index: 1001;
-    }
-
-    .menu::before,
-    .menu::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        width: 32px;
-        height: 1.5px;
-        background: var(--pearl);
-        transition: transform .3s ease, opacity .3s ease;
-    }
-
-    .menu::before {
-        top: 7px;
-    }
-
-    .menu::after {
-        bottom: 7px;
-    }
-
-    /* Quando il menu è aperto: diventa una X */
-    .menu[aria-expanded="true"]::before {
-        top: 11px;
-        transform: rotate(45deg);
-    }
-
-    .menu[aria-expanded="true"]::after {
-        bottom: 11px;
-        transform: rotate(-45deg);
     }
 }
