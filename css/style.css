@@ -2141,13 +2141,11 @@ nav {
 .footer-logo .logo-text small:first-of-type {
     margin-top: 8px;
     font-size: 1.05rem;
-    letter-spacing: .18em;
 }
 
 .footer-logo .logo-text small:last-of-type {
     margin-top: 3px;
     font-size: .78rem;
-    letter-spacing: .28em;
     opacity: .62;
 }
 
